@@ -6,7 +6,16 @@ const activeChainId = ChainId.Rinkeby;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider desiredChainId={activeChainId}>
+    <ThirdwebProvider
+      desiredChainId={activeChainId}
+      sdkOptions={{
+        gasless: {
+          openzeppelin: {
+            relayerUrl: String(process.env.PUBLIC_OPENZEPPELIN_URL),
+          },
+        },
+      }}
+    >
       <ChakraProvider>
         <Component {...pageProps} />
       </ChakraProvider>
