@@ -79,7 +79,6 @@ export default async function handler(
 
       try {
         const response = await nftCollection?.signature.generate(metadata);
-        console.log("Signature payload: ", response);
 
         // Respond with the payload and signature which will be used in the frontend to mint the NFT
         res.status(201).json({
