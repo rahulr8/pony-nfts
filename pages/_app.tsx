@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       sdkOptions={{
         gasless: {
           openzeppelin: {
-            relayerUrl: String(process.env.PUBLIC_OPENZEPPELIN_URL),
+            relayerUrl: String(process.env.NEXT_PUBLIC_OPENZEPPELIN_URL),
           },
         },
       }}

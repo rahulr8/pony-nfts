@@ -41,7 +41,7 @@ const Nfts = () => {
     fetchNfts();
   }, [loading]);
 
-  const nftCollectionAddress = process.env.CONTRACT_ADDRESS;
+  const nftCollectionAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
   const nftCollection = useNFTCollection(nftCollectionAddress);
 
   // Function which generates signature and mints NFT
@@ -66,17 +66,14 @@ const Nfts = () => {
           signature: data.signature,
           payload: data.payload,
         };
-        console.log("mintInput", mintInput);
-        console.log("signature", nftCollection?.signature);
+
         const mint = await nftCollection?.signature.mint(mintInput);
-        console.log("mint", mint);
         alert("NFT successfully minted!");
         setLoading(false);
       }
     } catch (error) {
       console.log("error", error);
       setLoading(false);
-      console.log(error);
       alert("Failed to mint NFT!");
     }
   };

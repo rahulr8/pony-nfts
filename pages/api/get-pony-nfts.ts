@@ -17,18 +17,18 @@ export default async function handler(
 
   // Connect to thirdweb SDK
   const sdk = ThirdwebSDK.fromPrivateKey(
-    process.env.PRIVATE_KEY as string,
+    process.env.NEXT_PUBLIC_PRIVATE_KEY as string,
     "rinkeby"
   );
 
-  const nftCollectionAddress = process.env.CONTRACT_ADDRESS as string;
+  const nftCollectionAddress = process.env
+    .NEXT_PUBLIC_CONTRACT_ADDRESS as string;
   const nftCollection = sdk.getNFTCollection(nftCollectionAddress);
 
   switch (req.method) {
     case "GET":
       try {
         const mintedNfts: NFTMetadataOwner[] = await nftCollection?.getAll();
-        console.log("mintedNfts", mintedNfts);
 
         if (!mintedNfts) {
           res.status(200).json(nfts);
@@ -63,7 +63,6 @@ export default async function handler(
 
       // Find the NFT to mint in the array of NFT metadata using the ID
       const nftToMint = nfts[id];
-      console.log("nftToMint", nftToMint);
 
       // Set up the NFT metadata for signature generation
       const metadata: PayloadToSign721 = {
@@ -74,7 +73,6 @@ export default async function handler(
           // Set the id attribute which we use to find which NFTs have been minted
           attributes: { id },
         },
-        price: nftToMint.price,
         mintStartTime: startTime,
         to: address,
       };
