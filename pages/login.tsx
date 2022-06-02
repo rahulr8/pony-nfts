@@ -1,14 +1,12 @@
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { Button, Center, Flex } from "@chakra-ui/react";
 import {
   ADAPTER_EVENTS,
   SafeEventEmitterProvider,
   CHAIN_NAMESPACES,
 } from "@web3auth/base";
 import type { Web3Auth, Web3AuthOptions } from "@web3auth/web3auth";
-import { useEffect, useState } from "react";
-import { Button, Center, Flex } from "@chakra-ui/react";
-import { useRouter } from "next/router";
-
-import RPC from "../services/evm";
 
 function Login() {
   const [web3AuthInstance, setWeb3AuthInstance] = useState<Web3Auth | null>(
@@ -78,8 +76,8 @@ function Login() {
     const provider = await web3AuthInstance.connect();
     setProvider(provider);
 
-    // Then send user to the NFTs page
-    router.push("/");
+    // TODO: Then send user to the NFTs page
+    // router.push("/");
   };
 
   /**

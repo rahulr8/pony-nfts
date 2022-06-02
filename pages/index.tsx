@@ -12,13 +12,13 @@ const Home: NextPage = () => {
     <div>
       {address ? (
         <Flex mt="5rem" alignItems="center" flexDir="column">
-          <Heading mb="2.5rem">Select an NFT to Mint</Heading>
+          <Heading mb="2.5rem">Select a pony NFT to mint!</Heading>
           <Nfts />
         </Flex>
       ) : (
         <Flex mt="5rem" alignItems="center" flexDir="column">
           <Button size="lg" colorScheme="pink" onClick={connectWithMetamask}>
-            Connect Metamask Wallet
+            Connect with Metamask
           </Button>
         </Flex>
       )}

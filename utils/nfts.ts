@@ -47,4 +47,25 @@ export const NFTs = [
     price: 0.01,
     minted: false,
   },
+  {
+    id: 6,
+    name: "Pony 7",
+    description: "Yet another pony",
+    url: "https://images.unsplash.com/photo-1613043399165-a607298cd0ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHBvbnl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+    minted: false,
+  },
+  {
+    id: 7,
+    name: "Pony 8",
+    description: "Ponies in love",
+    url: "https://images.unsplash.com/photo-1573041724441-b7f17b41a9a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHBvbnl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+    minted: false,
+  },
+  {
+    id: 8,
+    name: "Pony 9",
+    description: "Screaming pony",
+    url: "https://images.unsplash.com/photo-1516638082077-db094be3ae53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBvbnl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+    minted: false,
+  },
 ];

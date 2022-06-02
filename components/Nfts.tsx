@@ -17,6 +17,7 @@ import {
 
 const Nfts = () => {
   const [loading, setLoading] = useState(false);
+  const [selectedNFT, setSelectedNFT] = useState<number | null>(null);
   const [nftMetadata, setNftMetadata] = useState([null]);
   const [fetchedNfts, setFetchedNfts] = useState(false);
 
@@ -46,6 +47,7 @@ const Nfts = () => {
 
   // Function which generates signature and mints NFT
   const mintNft = async (id: number) => {
+    setSelectedNFT(id);
     setLoading(true);
     connectWithMetamask;
 
@@ -127,16 +129,18 @@ const Nfts = () => {
                 {nft?.price}
               </Box>
               {loading ? (
-                <p>Minting... You will need to approve 1 transaction</p>
+                selectedNFT === nft.id && (
+                  <p>Mint in progress. Please approve transaction</p>
+                )
               ) : nft?.minted ? (
-                <b>This NFT has already been minted</b>
+                <b>Someone already owns this pony</b>
               ) : (
                 <Button
                   colorScheme="purple"
                   m="0.5rem"
                   onClick={() => mintNft(nft?.id)}
                 >
-                  Mint
+                  Mint pony!
                 </Button>
               )}
             </Flex>
