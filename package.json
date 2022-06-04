@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.1.2",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@mantine/core": "^4.2.7",
+    "@mantine/hooks": "^4.2.7",
+    "@mantine/next": "^4.2.7",
     "@thirdweb-dev/react": "^2",
     "@thirdweb-dev/sdk": "^2",
     "@web3auth/web3auth": "1.0.0",

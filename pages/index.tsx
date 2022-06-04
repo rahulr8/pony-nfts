@@ -1,4 +1,4 @@
-import { Flex, Heading, Button } from "@chakra-ui/react";
+import { Button } from "@mantine/core";
 import { useAddress, useMetamask } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import { Gallery, Header } from "components";
@@ -12,16 +12,30 @@ const Home: NextPage = () => {
     <div>
       <Header />
       {address ? (
-        <Flex mt="5rem" alignItems="center" flexDir="column">
-          <Heading mb="2.5rem">Select a pony NFT to mint!</Heading>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: "5rem",
+          }}
+        >
+          <h1 style={{ marginBottom: "2.5rem" }}>Select a pony NFT to mint!</h1>
           <Gallery />
-        </Flex>
+        </div>
       ) : (
-        <Flex mt="5rem" alignItems="center" flexDir="column">
-          <Button size="lg" colorScheme="pink" onClick={connectWithMetamask}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: "5rem",
+          }}
+        >
+          <Button size="lg" onClick={connectWithMetamask}>
             Connect with Metamask
           </Button>
-        </Flex>
+        </div>
       )}
     </div>
   );

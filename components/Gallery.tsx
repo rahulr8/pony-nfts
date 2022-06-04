@@ -1,8 +1,8 @@
-import { SimpleGrid, Flex, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useNFTCollection, useChainId, ChainId } from "@thirdweb-dev/react";
 import { NftItem } from "components";
 import { withProtected } from "utils/withProtected";
+import { Grid } from "@mantine/core";
 
 const GalleryComponent: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -37,15 +37,22 @@ const GalleryComponent: React.FC = () => {
 
   if (chainId !== ChainId.Rinkeby) {
     return (
-      <Flex mt="5rem" alignItems="center" flexDir="column">
-        <Heading fontSize="md">Please connect to the Rinkeby Testnet</Heading>
-      </Flex>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "5rem",
+        }}
+      >
+        <h2>Please connect to the Rinkeby Testnet</h2>
+      </div>
     );
   }
 
   if (fetchedNfts) {
     return (
-      <SimpleGrid m="2rem" justifyItems="center" columns={3} spacing={10}>
+      <Grid columns={3} gutter="md" justify="center">
         {nftMetadata?.map((nft: any) => (
           <NftItem
             key={nftMetadata.indexOf(nft)}
@@ -53,10 +60,10 @@ const GalleryComponent: React.FC = () => {
             nftCollection={nftCollection}
           />
         ))}
-      </SimpleGrid>
+      </Grid>
     );
   } else {
-    return <Heading>Loading...</Heading>;
+    return <h1>Loading...</h1>;
   }
 };
 

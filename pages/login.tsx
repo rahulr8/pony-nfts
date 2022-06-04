@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Button, Center, Flex } from "@chakra-ui/react";
+import { Button } from "@mantine/core";
 import {
   ADAPTER_EVENTS,
   SafeEventEmitterProvider,
@@ -96,26 +96,37 @@ function Login() {
   const router = useRouter();
 
   const loggedInView = (
-    <Button colorScheme="red" onClick={logout}>
+    <Button color="red" onClick={logout}>
       Log Out
     </Button>
   );
 
   const unloggedInView = (
-    <Flex flexDirection="column" alignItems="center" h="200px">
+    <div
+      style={{
+        flexDirection: "column",
+        alignItems: "center",
+        height: "200px",
+      }}
+    >
       <h1 style={{ paddingBottom: "20px" }}>
         Welcome to the Pony NFT app. Please login
       </h1>
-      <Button colorScheme="blue" onClick={login}>
-        Login
-      </Button>
-    </Flex>
+      <Button onClick={login}>Login</Button>
+    </div>
   );
 
   return (
-    <Center style={{ height: "500px" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "500px",
+      }}
+    >
       <div>{provider ? loggedInView : unloggedInView}</div>
-    </Center>
+    </div>
   );
 }
 

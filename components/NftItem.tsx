@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { Image, Button, Box } from "@mantine/core";
 import { useAddress, useMetamask } from "@thirdweb-dev/react";
 import { useState } from "react";
 
@@ -50,26 +50,35 @@ export const NftItem: React.FC<NftItemProps> = ({ nft, nftCollection }) => {
   };
 
   return (
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Box
+      sx={{
+        borderWidth: "1px",
+        borderRadius: "lg",
+        overflow: "hidden",
+      }}
+    >
       <Image width="30rem" height="15rem" src={nft?.url} alt="NFT image" />
 
-      <Flex p="1rem" alignItems="center" flexDir="column">
+      <div
+        style={{
+          padding: "1rem",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
         <Box
-          mt="1"
-          fontWeight="bold"
-          lineHeight="tight"
-          fontSize="20"
-          m="0.5rem"
+          sx={{
+            marginTop: "1",
+            fontWeight: "bold",
+            lineHeight: "tight",
+            fontSize: "20",
+          }}
         >
           {nft?.name}
         </Box>
 
-        <Box fontSize="16" m="0.5rem">
-          {nft?.description}
-        </Box>
-        <Box fontSize="16" m="0.5rem">
-          {nft?.price}
-        </Box>
+        <Box sx={{ fontSize: "16" }}>{nft?.description}</Box>
+        <Box sx={{ fontSize: "16" }}>{nft?.price}</Box>
         {loading ? (
           selectedNFT === nft.id && (
             <p>Mint in progress. Please approve transaction</p>
@@ -77,15 +86,11 @@ export const NftItem: React.FC<NftItemProps> = ({ nft, nftCollection }) => {
         ) : nft?.minted ? (
           <b>Someone already owns this pony</b>
         ) : (
-          <Button
-            colorScheme="purple"
-            m="0.5rem"
-            onClick={() => mintNft(nft?.id)}
-          >
+          <Button color="purple" onClick={() => mintNft(nft?.id)}>
             Mint pony!
           </Button>
         )}
-      </Flex>
+      </div>
     </Box>
   );
 };

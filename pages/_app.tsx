@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
-import { ChakraProvider } from "@chakra-ui/react";
+
+import { MantineProvider } from "@mantine/core";
 
 const activeChainId = ChainId.Rinkeby;
 
@@ -16,9 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
       }}
     >
-      <ChakraProvider>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
         <Component {...pageProps} />
-      </ChakraProvider>
+      </MantineProvider>
     </ThirdwebProvider>
   );
 }
