@@ -1,4 +1,4 @@
-import { NFTs } from "./../../utils/nfts";
+import { PONIES } from "../../utils/ponies";
 import type { NextApiRequest, NextApiResponse } from "next";
 import {
   ThirdwebSDK,
@@ -13,7 +13,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const nfts = NFTs;
+  const nfts = PONIES;
 
   // Connect to thirdweb SDK
   const sdk = ThirdwebSDK.fromPrivateKey(
@@ -90,6 +90,7 @@ export default async function handler(
         console.error(error);
       }
       break;
+
     default:
       res.status(200).json(nfts);
   }

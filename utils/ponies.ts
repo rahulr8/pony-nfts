@@ -1,4 +1,4 @@
-export const NFTs = [
+export const PONIES = [
   {
     id: 0,
     name: "Pony 1",
