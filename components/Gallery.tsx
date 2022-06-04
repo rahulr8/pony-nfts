@@ -1,22 +1,10 @@
-import {
-  Box,
-  SimpleGrid,
-  Button,
-  Flex,
-  Image,
-  Heading,
-} from "@chakra-ui/react";
+import { SimpleGrid, Flex, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import {
-  useAddress,
-  useNFTCollection,
-  useMetamask,
-  useChainId,
-  ChainId,
-} from "@thirdweb-dev/react";
-import { NftItem } from "./NftItem";
+import { useNFTCollection, useChainId, ChainId } from "@thirdweb-dev/react";
+import { NftItem } from "components";
+import { withProtected } from "utils/withProtected";
 
-const Nfts = () => {
+const GalleryComponent: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [nftMetadata, setNftMetadata] = useState([null]);
   const [fetchedNfts, setFetchedNfts] = useState(false);
@@ -72,4 +60,4 @@ const Nfts = () => {
   }
 };
 
-export default Nfts;
+export const Gallery = withProtected(GalleryComponent);

@@ -4,7 +4,6 @@ export const PONIES = [
     name: "Pony 1",
     description: "A one of a kind pony",
     url: "https://images.unsplash.com/photo-1579358733213-f5754c8733cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1652&q=80",
-    price: 0.01,
     minted: false,
   },
   {
@@ -12,7 +11,6 @@ export const PONIES = [
     name: "Pony 2",
     description: "Damn check out this pony",
     url: "https://images.unsplash.com/photo-1511195188569-9b97074ae1b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
-    price: 0.01,
     minted: false,
   },
   {
@@ -20,7 +18,6 @@ export const PONIES = [
     name: "Pony 3",
     description: "That's a pony if I ever saw one",
     url: "https://images.unsplash.com/photo-1516189504499-925f76187eed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
-    price: 0.01,
     minted: false,
   },
   {
@@ -28,7 +25,6 @@ export const PONIES = [
     name: "Pony 4",
     description: "What an amazing pony",
     url: "https://images.unsplash.com/photo-1512866278741-6af18fbc4113?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
-    price: 0.01,
     minted: false,
   },
   {
@@ -36,7 +32,6 @@ export const PONIES = [
     name: "Pony 5",
     description: "This girl loves her pony",
     url: "https://images.unsplash.com/photo-1535521204257-30abc396f664?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80",
-    price: 0.01,
     minted: false,
   },
   {
@@ -44,7 +39,6 @@ export const PONIES = [
     name: "Pony 6",
     description: "A pony AND an NFT???",
     url: "https://images.unsplash.com/photo-1613043399165-d6ae7327ae02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
-    price: 0.01,
     minted: false,
   },
   {

@@ -11,6 +11,9 @@ export const NftItem: React.FC<NftItemProps> = ({ nft, nftCollection }) => {
   const [loading, setLoading] = useState(false);
   const [selectedNFT, setSelectedNFT] = useState<number | null>(null);
 
+  const address = useAddress();
+  const connectWithMetamask = useMetamask();
+
   // Function which generates signature and mints NFT
   const mintNft = async (id: number) => {
     setSelectedNFT(id);
@@ -45,9 +48,6 @@ export const NftItem: React.FC<NftItemProps> = ({ nft, nftCollection }) => {
       alert("Failed to mint NFT!");
     }
   };
-
-  const address = useAddress();
-  const connectWithMetamask = useMetamask();
 
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
